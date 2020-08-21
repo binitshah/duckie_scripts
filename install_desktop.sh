@@ -92,7 +92,7 @@ sudo touch /etc/cloud/cloud-init.disabled
 echo ""
 
 echo "disable snapd to reduce boot time"
-sudo apt purge snapd
+sudo apt purge --yes snapd
 rm -rf ~/snap
 sudo rm -rf /snap
 sudo rm -rf /var/snap
