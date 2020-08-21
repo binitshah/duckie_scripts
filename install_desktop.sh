@@ -23,11 +23,11 @@ git remote update
 UPSTREAM=${1:-'@{u}'}
 LOCAL=$(git rev-parse @)
 REMOTE=$(git rev-parse "$UPSTREAM")
-
 if [ ! $LOCAL = $REMOTE ]; then
     echo "repo not up-to-date. perform a 'git pull'. exiting."
     exit 1
 fi
+echo ""
 
 echo "waiting for apt lock"
 while sudo fuser /var/{lib/{dpkg,apt/lists},cache/apt/archives}/lock >/dev/null 2>&1; do
