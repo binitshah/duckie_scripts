@@ -2,16 +2,18 @@
 
 timestamp=`date '+%Y%m%d%H%M'`;
 logdir="$PWD/log/$timestamp"
-logfile="$logdir/installation.log"
+logfile_install="$logdir/installation.log"
+logfile_systemd_analyze="$logdir/systemd_startup.svg"
 logzip="$logdir/logs.zip"
 
 echo "Starting installation"
 echo ""
 
 mkdir -p $logdir
-./install_server.sh |& tee $logfile
+./install_server.sh |& tee $logfile_install
+systemd-analyze plot > $logfile_systemd_analyze
 
 echo "Generating $logzip. Include it when asking questions"
-zip $logzip $logfile
+zip $logzip $logfile_install $logfile_systemd_analyze
 echo ""
 
