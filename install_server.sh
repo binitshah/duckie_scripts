@@ -100,6 +100,6 @@ sudo rm -rf /var/lib/snapd
 echo ""
 
 echo "disable MOTD news"
-sudo mv ./motd-news /etc/default/motd-news
+sudo cp ./motd-news /etc/default/motd-news
 echo ""
 
