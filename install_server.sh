@@ -16,6 +16,7 @@ if [[ ! "$PWD" =~ DuckieScripts ]]; then
     echo "run this script from the DuckieScripts folder. exiting."
     exit 1
 fi
+echo "yes"
 echo ""
 
 echo "checking install repo is up-to-date"
@@ -73,6 +74,7 @@ echo ""
 echo "adding setup.bash to bashrc"
 echo "" >> ~/.bashrc
 echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
+echo ""
 
 echo "installing zip"
 sudo apt install --yes zip
