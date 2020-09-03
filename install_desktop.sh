@@ -76,8 +76,8 @@ echo "" >> ~/.bashrc
 echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
 echo ""
 
-echo "installing terminator, zip, & eog"
-sudo apt install --yes terminator eog zip
+echo "installing terminator, zip, eog, & i2c-tools"
+sudo apt install --yes terminator eog zip i2c-tools
 echo ""
 
 echo "installing Arduino"

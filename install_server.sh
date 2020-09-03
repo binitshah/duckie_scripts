@@ -76,8 +76,8 @@ echo "" >> ~/.bashrc
 echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
 echo ""
 
-echo "installing zip"
-sudo apt install --yes zip
+echo "installing zip & i2c-tools"
+sudo apt install --yes zip i2c-tools
 echo ""
 
 echo "installing Arduino-cli"
