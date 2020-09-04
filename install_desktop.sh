@@ -114,3 +114,7 @@ echo "disable MOTD news"
 sudo cp ./motd-news /etc/default/motd-news
 echo ""
 
+echo "disabled password requirement for ssh access"
+sudo cp ./sshd_config /etc/ssh/sshd_config
+echo ""
+
