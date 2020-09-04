@@ -82,7 +82,7 @@ echo ""
 
 echo "installing Arduino-cli"
 sudo usermod -a -G tty $USER
-curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | BINDIR=~/.local/bin sh
+curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | BINDIR=~/.local/bin sh -s 0.12.1
 echo ""
 
 echo "setting vim settings in vimrc"
