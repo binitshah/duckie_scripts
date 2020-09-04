@@ -2,13 +2,13 @@
 
 set -e
 
-echo "waiting to get online"
-while ! timeout 0.2 ping -c 1 -n google.com &> /dev/null
-do
-    sleep 1
-    printf "%c" "."
-done
-echo "online!"
+echo "checking running on an ubuntu 20.04 machine"
+source /etc/os-release
+if [[ ! $VERSION_ID = "20.04" ]]; then
+    echo "not running on an ubuntu 20.04 machine. exiting."
+    exit 1
+fi
+echo "yes"
 echo ""
 
 echo "checking running script from correct folder"
@@ -17,6 +17,15 @@ if [[ ! "$PWD" =~ DuckieScripts ]]; then
     exit 1
 fi
 echo "yes"
+echo ""
+
+echo "waiting to get online"
+while ! timeout 0.2 ping -c 1 -n google.com &> /dev/null
+do
+    sleep 1
+    printf "%c" "."
+done
+echo "online!"
 echo ""
 
 echo "checking install repo is up-to-date"
