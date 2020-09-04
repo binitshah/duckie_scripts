@@ -72,7 +72,7 @@ echo ""
 
 echo "installing ROS2"
 sudo apt update
-sudo apt install --yes ros-foxy-desktop
+sudo apt install --yes ros-foxy-desktop ros-foxy-demo-nodes-cpp ros-foxy-demo-nodes-py
 echo ""
 
 echo "installing argcomplete"
