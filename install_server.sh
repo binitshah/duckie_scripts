@@ -125,8 +125,7 @@ echo ""
 echo "setup arduino-cli"
 source ~/.profile
 arduino-cli config init
-cp ./package_attinyraspi_index.json ~/.arduino15/
-arduino-cli core update-index
+arduino-cli core update-index --additional-urls https://raw.githubusercontent.com/binitshah/DuckieScripts/master/package_attinyraspi_index.json
 arduino-cli core install ATTinyCore:avr
 sudo chmod +s ~/.arduino15/packages/arduino/tools/avrdude/6.3.0-arduino17/bin/avrdude
 echo ""
