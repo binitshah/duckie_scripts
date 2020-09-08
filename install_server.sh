@@ -2,6 +2,14 @@
 
 set -e
 
+echo "check given the right arguments"
+if [ -z "$1" ]; then
+    echo "please supply duckie identifier. pattern: ./install_logging.sh duckie#"
+    exit 1
+fi
+echo "yes"
+echo ""
+
 echo "checking running on an ubuntu 20.04 machine"
 source /etc/os-release
 if [[ ! $VERSION_ID = "20.04" ]]; then
@@ -121,4 +129,15 @@ cp ./package_attinyraspi_index.json ~/.arduino15/
 arduino-cli core update-index
 arduino-cli core install ATTinyCore:avr
 sudo chmod +s ~/.arduino15/packages/arduino/tools/avrdude/6.3.0-arduino17/bin/avrdude
+echo ""
+
+echo "setup hotspot"
+sudo apt-get install network-manager
+sudo nmcli dev wifi hotspot ifname wlan0 ssid $1 password "$1"
+sudo nmcli con mod Hotspot connection.autoconnect yes
+echo ""
+
+echo "running final apt update & upgrade"
+sudo apt-get update
+sudo apt-get upgrade --yes
 echo ""
