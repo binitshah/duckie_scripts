@@ -131,7 +131,7 @@ sudo chmod +s ~/.arduino15/packages/arduino/tools/avrdude/6.3.0-arduino17/bin/av
 echo ""
 
 echo "setup hotspot"
-sudo apt-get install network-manager
+sudo apt-get install --yes network-manager
 sudo nmcli dev wifi hotspot ifname wlan0 ssid $DID password "$DID"
 sudo nmcli con mod Hotspot connection.autoconnect yes
 echo ""
@@ -143,4 +143,5 @@ echo ""
 echo "running final apt update & upgrade"
 sudo apt-get update
 sudo apt-get upgrade --yes
+sudo apt autoremove
 echo ""
