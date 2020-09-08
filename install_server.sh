@@ -137,6 +137,10 @@ sudo nmcli dev wifi hotspot ifname wlan0 ssid $1 password "$1"
 sudo nmcli con mod Hotspot connection.autoconnect yes
 echo ""
 
+echo "change user password"
+echo -e "ubuntu\n$1\n$1" | passwd
+echo ""
+
 echo "running final apt update & upgrade"
 sudo apt-get update
 sudo apt-get upgrade --yes
