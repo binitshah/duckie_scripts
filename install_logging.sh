@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "Killing any current apt upgrades"
+systemctl stop apt-daily-upgrade.service
+echo ""
+
 timestamp=`date '+%Y%m%d%H%M'`;
 logdir="$PWD/log/$timestamp"
 logfile_install="$logdir/installation.log"
