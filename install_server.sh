@@ -143,5 +143,5 @@ echo ""
 echo "running final apt update & upgrade"
 sudo apt-get update
 sudo apt-get upgrade --yes
-sudo apt autoremove
+sudo apt autoremove --yes
 echo ""
