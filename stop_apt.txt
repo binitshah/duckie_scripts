@@ -1,0 +1,1 @@
+systemctl stop apt-daily-upgrade.service

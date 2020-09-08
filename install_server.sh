@@ -3,8 +3,8 @@
 set -e
 
 echo "check given the right arguments"
-if [ -z "$1" ]; then
-    echo "please supply duckie identifier. pattern: ./install_logging.sh duckie#"
+if [ -z "$DID" ]; then
+    echo "please supply duckie identifier. pattern: export DID=duckie#"
     exit 1
 fi
 echo "yes"
@@ -123,7 +123,7 @@ sudo cp ./motd-news /etc/default/motd-news
 echo ""
 
 echo "setup arduino-cli"
-source ~/.bashrc
+source ~/.profile
 arduino-cli config init
 cp ./package_attinyraspi_index.json ~/.arduino15/
 arduino-cli core update-index
@@ -133,12 +133,12 @@ echo ""
 
 echo "setup hotspot"
 sudo apt-get install network-manager
-sudo nmcli dev wifi hotspot ifname wlan0 ssid $1 password "$1"
+sudo nmcli dev wifi hotspot ifname wlan0 ssid $DID password "$DID"
 sudo nmcli con mod Hotspot connection.autoconnect yes
 echo ""
 
 echo "change user password"
-echo -e "ubuntu\n$1\n$1" | passwd
+echo -e "ubuntu\n$DID\n$DID" | passwd
 echo ""
 
 echo "running final apt update & upgrade"
