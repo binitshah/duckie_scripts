@@ -18,6 +18,7 @@ mkdir -p $logdir
 systemd-analyze plot > $logfile_systemd_analyze
 
 echo "Generating $logzip. Include it when asking questions"
+source ~/.profile
 zip $logzip $logfile_install $logfile_systemd_analyze
 echo ""
 
