@@ -113,3 +113,6 @@ echo ""
 echo "disable MOTD news"
 sudo cp ./motd-news /etc/default/motd-news
 echo ""
+
+echo "you will need to install the ATTinyCore manually using the arduino IDE"
+echo ""
