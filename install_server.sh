@@ -48,8 +48,8 @@ echo "got apt lock!"
 echo ""
 
 echo "running an apt update & upgrade"
-sudo apt update
-sudo apt upgrade --yes
+sudo apt-get update
+sudo apt-get upgrade --yes
 echo ""
 
 echo "Setting locale info"
@@ -59,7 +59,7 @@ export LANG=en_US.UTF-8
 echo ""
 
 echo "installing ROS2 prereqs"
-sudo apt install --yes curl gnupg2 lsb-release
+sudo apt-get install --yes curl gnupg2 lsb-release
 echo ""
 
 echo "adding ROS apt key"
@@ -71,12 +71,12 @@ sudo sh -c 'echo "deb [arch=$(dpkg --print-architecture)] http://packages.ros.or
 echo ""
 
 echo "installing ROS2"
-sudo apt update
-sudo apt install --yes ros-foxy-ros-base ros-foxy-demo-nodes-cpp ros-foxy-demo-nodes-py
+sudo apt-get update
+sudo apt-get install --yes ros-foxy-ros-base ros-foxy-demo-nodes-cpp ros-foxy-demo-nodes-py
 echo ""
 
 echo "installing argcomplete"
-sudo apt install --yes python3-pip
+sudo apt-get install --yes python3-pip
 pip3 install -U argcomplete
 echo ""
 
@@ -86,7 +86,7 @@ echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
 echo ""
 
 echo "installing zip & i2c-tools"
-sudo apt install --yes zip i2c-tools
+sudo apt-get install --yes zip i2c-tools
 echo ""
 
 echo "installing Arduino-cli"
