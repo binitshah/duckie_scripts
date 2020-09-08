@@ -137,7 +137,7 @@ sudo nmcli con mod Hotspot connection.autoconnect yes
 echo ""
 
 echo "change user password"
-echo -e "ubuntu\n$DID\n$DID" | passwd
+echo -e "ubuntu123\n$DID\n$DID" | passwd
 echo ""
 
 echo "running final apt update & upgrade"
