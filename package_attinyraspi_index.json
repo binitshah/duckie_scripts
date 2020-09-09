@@ -17,10 +17,10 @@
           "help": {
             "online": ""
           },
-          "url": "https://github.com/binitshah/ATTinyCore/archive/1.4.1-duck.tar.gz",
+          "url": "https://github.com/binitshah/ATTinyCore/releases/download/1.4.1-duck/ATTinyCore-1.4.1-duck.tar.gz",
           "archiveFileName": "ATTinyCore-1.4.1-duck.tar.gz",
-          "checksum": "SHA-256:faee2a2a67c87ca8396da282363d0f879c4932c5f8b845bc3a2c1a7b538c3a17",
-          "size": "4316938",
+          "checksum": "SHA-256:03bc20bf09dce5f8c362dd436f11004b8fd83d326bd43e53e4d83cb5c864c190",
+          "size": "4335510",
           "boards": [
             {"name": "ATtiny441"},
             {"name": "ATtiny841"},
