@@ -88,6 +88,10 @@ sudo apt-get install --yes python3-pip
 pip3 install -U argcomplete
 echo ""
 
+echo "installing colcon"
+sudo apt-get install --yes python3-colcon-common-extensions
+echo ""
+
 echo "adding setup.bash to bashrc"
 echo "" >> ~/.bashrc
 echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
