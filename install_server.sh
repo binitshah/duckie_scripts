@@ -97,6 +97,10 @@ echo "installing zip & i2c-tools"
 sudo apt-get install --yes zip i2c-tools
 echo ""
 
+echo "installing pip package: smbus"
+sudo pip3 install smbus
+echo ""
+
 echo "installing Arduino-cli"
 sudo usermod -a -G tty $USER
 curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | BINDIR=~/.local/bin sh -s 0.12.1
