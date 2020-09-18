@@ -101,8 +101,9 @@ echo "installing zip & i2c-tools"
 sudo apt-get install --yes zip i2c-tools
 echo ""
 
-echo "installing pip package: smbus"
-sudo pip3 install smbus
+echo "installing pip package: smbus & RPi.GPIO"
+sudo python3 -m pip install smbus
+sudo python3 -m pip install RPi.GPIO
 echo ""
 
 echo "installing Arduino-cli, TODO change section to add myself to groups"
