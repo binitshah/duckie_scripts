@@ -130,6 +130,7 @@ echo "disable MOTD news"
 sudo cp ./motd-news /etc/default/motd-news
 echo ""
 
+echo "TODO: replace arduino-cli with avrdude avrgcc, sudo cp .conf to /etc"
 echo "setup arduino-cli"
 source ~/.profile
 arduino-cli config init
@@ -149,8 +150,13 @@ echo "change user password"
 echo -e "ubuntu123\n$DID\n$DID" | passwd
 echo ""
 
+echo "TODO: clone duckie_msgs and colcon build, then add source overlay to .bashrc"
+echo ""
+
 echo "running final apt update & upgrade"
 sudo apt-get update
 sudo apt-get upgrade --yes
 sudo apt autoremove --yes
 echo ""
+
+echo "Perform a reboot by running 'sudo reboot'"
