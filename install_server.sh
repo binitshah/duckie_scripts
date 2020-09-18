@@ -105,8 +105,9 @@ echo "installing pip package: smbus"
 sudo pip3 install smbus
 echo ""
 
-echo "installing Arduino-cli"
+echo "installing Arduino-cli, TODO change section to add myself to groups"
 sudo usermod -a -G tty $USER
+sudo usermod -a -G i2c $USER
 curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | BINDIR=~/.local/bin sh -s 0.12.1
 echo ""
 
