@@ -4,7 +4,11 @@ set -e
 
 echo "check given the right arguments"
 if [ -z "$DID" ]; then
-    echo "please supply duckie identifier. pattern: export DID=duckie#"
+    echo "please supply duckie identifier. pattern: export DID=duckie###"
+    exit 1
+fi
+if [[ ! "$DID" =~ ^duckie[0-9]{3}$ ]]; then
+    echo "duckie identifier does not match pattern: duckie[0-9]{3}. 'duckie' followed by three digits"
     exit 1
 fi
 echo "yes"
