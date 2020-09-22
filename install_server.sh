@@ -119,6 +119,15 @@ sudo mv ./10-local_i2c_group.rules /etc/udev/rules.d/
 sudo mv ./11-local_video_group.rules /etc/udev/rules.d/
 echo ""
 
+echo "compile and install raspberrypi/userland"
+git clone https://github.com/binitshah/userland.git ~/userland
+mkdir ~/userland/build && cd ~/userland/build
+export LDFLAGS="-Wl,--no-as-needed"
+cmake -DCMAKE_BUILD_TYPE=Release -DARM64=ON ../
+make -j4 && sudo make install
+cd -
+echo ""
+
 echo "installing Arduino-cli, TODO replace with avrdude"
 curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | BINDIR=~/.local/bin sh -s 0.12.1
 echo ""
