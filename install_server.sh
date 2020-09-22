@@ -121,8 +121,8 @@ sudo chown :i2c /dev/i2c-1
 sudo chown :video /dev/vchiq
 sudo chmod g+rw /dev/i2c-1
 sudo chmod g+rw /dev/vchiq
-sudo mv ./10-local_i2c_group.rules /etc/udev/rules.d/
-sudo mv ./11-local_video_group.rules /etc/udev/rules.d/
+sudo cp ./10-local_i2c_group.rules /etc/udev/rules.d/
+sudo cp ./11-local_video_group.rules /etc/udev/rules.d/
 echo ""
 
 echo "compile and install raspberrypi/userland"
@@ -133,6 +133,9 @@ cmake -DCMAKE_BUILD_TYPE=Release -DARM64=ON ../
 make -j4 && sudo make install
 cd -
 sudo rm -rf ~/userland
+sudo cp ./bash_aliases ~/
+source ~/.bashrc
+sudo ldconfig
 echo ""
 
 echo "libmmal.so should look like this:"
