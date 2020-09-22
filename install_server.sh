@@ -106,9 +106,15 @@ sudo python3 -m pip install smbus
 sudo python3 -m pip install RPi.GPIO
 echo ""
 
-echo "installing Arduino-cli, TODO change section to add myself to groups"
+echo "add user to i2c/video/tty groups and give i2c/video groups permission over devices"
 sudo usermod -a -G tty $USER
 sudo usermod -a -G i2c $USER
+sudo usermod -a -G video $USER
+sudo chown :i2c /dev/i2c-1
+sudo chown :video /dev/vchiq
+echo ""
+
+echo "installing Arduino-cli, TODO replace with avrdude"
 curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | BINDIR=~/.local/bin sh -s 0.12.1
 echo ""
 
