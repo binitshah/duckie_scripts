@@ -126,6 +126,13 @@ export LDFLAGS="-Wl,--no-as-needed"
 cmake -DCMAKE_BUILD_TYPE=Release -DARM64=ON ../
 make -j4 && sudo make install
 cd -
+sudo rm -rf ~/userland
+echo ""
+
+echo "libmmal.so should look like this:"
+cat ./expected_libmmal.txt
+echo "here is what libmmal.so actually is:"
+ldd /opt/vc/lib/libmmal.so
 echo ""
 
 echo "installing Arduino-cli, TODO replace with avrdude"
