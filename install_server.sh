@@ -133,7 +133,7 @@ cmake -DCMAKE_BUILD_TYPE=Release -DARM64=ON ../
 make -j4 && sudo make install
 cd -
 sudo rm -rf ~/userland
-sudo cp ./bash_aliases ~/
+sudo cp ./.bash_aliases ~/
 source ~/.bashrc
 sudo ldconfig
 echo ""
