@@ -105,6 +105,12 @@ echo "installing pip package: smbus, RPi.GPIO, & picamera"
 sudo python3 -m pip install smbus
 sudo python3 -m pip install RPi.GPIO
 sudo python3 -m pip install picamera
+pip3 list
+echo ""
+
+echo "adding start_x and gpu_mem to boot config.txt"
+sudo sh -c "echo '\nstart_x=1\ngpu_mem=128' >> /boot/firmware/config.txt"
+cat /boot/firmware/config.txt
 echo ""
 
 echo "setup i2c & video unix groups"
