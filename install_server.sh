@@ -101,17 +101,22 @@ echo "installing zip & i2c-tools"
 sudo apt-get install --yes zip i2c-tools
 echo ""
 
-echo "installing pip package: smbus & RPi.GPIO"
+echo "installing pip package: smbus, RPi.GPIO, & picamera"
 sudo python3 -m pip install smbus
 sudo python3 -m pip install RPi.GPIO
+sudo python3 -m pip install picamera
 echo ""
 
-echo "add user to i2c/video/tty groups and give i2c/video groups permission over devices"
+echo "setup i2c & video unix groups"
 sudo usermod -a -G tty $USER
 sudo usermod -a -G i2c $USER
 sudo usermod -a -G video $USER
 sudo chown :i2c /dev/i2c-1
 sudo chown :video /dev/vchiq
+sudo chmod g+rw /dev/i2c-1
+sudo chmod g+rw /dev/vchiq
+sudo mv ./10-local_i2c_group.rules /etc/udev/rules.d/
+sudo mv ./11-local_video_group.rules /etc/udev/rules.d/
 echo ""
 
 echo "installing Arduino-cli, TODO replace with avrdude"
