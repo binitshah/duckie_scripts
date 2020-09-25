@@ -148,10 +148,6 @@ echo "here is what libmmal.so actually is:"
 ldd /opt/vc/lib/libmmal.so
 echo ""
 
-echo "installing Arduino-cli, TODO replace with avrdude"
-curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | BINDIR=~/.local/bin sh -s 0.12.1
-echo ""
-
 echo "setting vim settings in vimrc"
 cp ./.vimrc ~/
 echo ""
@@ -172,14 +168,9 @@ echo "disable MOTD news"
 sudo cp ./motd-news /etc/default/motd-news
 echo ""
 
-echo "TODO: replace arduino-cli with avrdude avrgcc, sudo cp .conf to /etc"
-echo "setup arduino-cli"
-source ~/.profile
-arduino-cli config init
-arduino-cli core update-index --additional-urls https://raw.githubusercontent.com/binitshah/DuckieScripts/master/package_attinyraspi_index.json
-arduino-cli core install ATTinyCore:avr --additional-urls https://raw.githubusercontent.com/binitshah/DuckieScripts/master/package_attinyraspi_index.json
-sudo chown root:root ~/.arduino15/packages/arduino/tools/avrdude/6.3.0-arduino17/bin/avrdude
-sudo chmod a+s ~/.arduino15/packages/arduino/tools/avrdude/6.3.0-arduino17/bin/avrdude
+echo "install avr toolset and copy conf for avrdude"
+sudo apt-get install --yes gcc-avr binutils-avr avr-libc avrdude
+sudo cp ./avrdude.conf /etc/avrdude.conf
 echo ""
 
 echo "setup hotspot"
