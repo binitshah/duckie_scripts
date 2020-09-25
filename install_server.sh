@@ -184,6 +184,12 @@ echo -e "ubuntu123\n$DID\n$DID" | passwd
 echo ""
 
 echo "TODO: clone duckie_msgs and colcon build, then add source overlay to .bashrc"
+mkdir -p ~/duckie_ws/src
+git clone https://github.com/binitshah/duckie_msgs.git ~/duckie_ws/src/duckie_msgs
+cd ~/duckie_ws
+colcon build
+cd -
+echo "source ~/duckie_ws/install/setup.bash" >> ~/.bashrc
 echo ""
 
 echo "running final apt update & upgrade"
