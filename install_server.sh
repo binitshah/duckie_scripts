@@ -128,12 +128,15 @@ sudo usermod -a -G gpio $USER
 sudo chown :i2c /dev/i2c-1
 sudo chown :video /dev/vchiq
 sudo chown :gpio /dev/mem
+sudo chown :gpio /dev/gpiomem
 sudo chmod g+rw /dev/i2c-1
 sudo chmod g+rw /dev/vchiq
 sudo chmod g+rw /dev/mem
+sudo chmod g+rw /dev/gpiomem
 sudo cp ./10-local_i2c_group.rules /etc/udev/rules.d/
 sudo cp ./11-local_video_group.rules /etc/udev/rules.d/
 sudo cp ./12-local_gpio_group.rules /etc/udev/rules.d/
+sudo cp ./13-local_gpio_group.rules /etc/udev/rules.d/
 echo ""
 
 echo "compile and install raspberrypi/userland"
