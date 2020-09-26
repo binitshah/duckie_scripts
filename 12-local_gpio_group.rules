@@ -1,1 +1,1 @@
-KERNEL=="gpiomem", GROUP="gpio"
+KERNEL=="mem", GROUP="gpio"
