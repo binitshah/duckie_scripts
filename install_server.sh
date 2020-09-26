@@ -190,6 +190,7 @@ cd ~/duckie_ws
 colcon build
 cd -
 echo "source ~/duckie_ws/install/setup.bash" >> ~/.bashrc
+echo "export PYTHONOPTIMIZE=1" >> ~/.bashrc
 echo ""
 
 echo "running final apt update & upgrade"
