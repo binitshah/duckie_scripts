@@ -85,7 +85,7 @@ echo ""
 
 echo "installing ROS2"
 sudo apt-get update
-sudo apt-get install --yes ros-foxy-ros-base ros-foxy-demo-nodes-cpp ros-foxy-demo-nodes-py
+sudo apt-get install --yes ros-foxy-ros-base ros-foxy-demo-nodes-cpp ros-foxy-demo-nodes-py ros-foxy-teleop-twist-keyboard
 echo ""
 
 echo "installing argcomplete"
