@@ -60,6 +60,7 @@ echo "got apt lock!"
 echo ""
 
 echo "running an apt update & upgrade"
+sudo apt remove --yes unattended-upgrades
 sudo apt-get update
 sudo apt-get upgrade --yes
 echo ""
@@ -118,9 +119,9 @@ cat /boot/firmware/config.txt
 echo ""
 
 echo "setup i2c & video unix groups"
-sudo groupadd i2c
-sudo groupadd video
-sudo groupadd gpio
+sudo groupadd -f i2c
+sudo groupadd -f video
+sudo groupadd -f gpio
 sudo usermod -a -G tty $USER
 sudo usermod -a -G i2c $USER
 sudo usermod -a -G video $USER
