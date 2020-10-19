@@ -12,8 +12,8 @@ echo "yes"
 echo ""
 
 echo "checking running script from correct folder"
-if [[ ! "$PWD" =~ DuckieScripts ]]; then
-    echo "run this script from the DuckieScripts folder. exiting."
+if [[ ! "$PWD" =~ duckie_scripts ]]; then
+    echo "run this script from the duckie_scripts folder. exiting."
     exit 1
 fi
 echo "yes"
