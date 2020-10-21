@@ -198,6 +198,7 @@ echo "TODO: clone duckie_msgs and colcon build, then add source overlay to .bash
 mkdir -p ~/duckie_ws/src
 git clone https://github.com/binitshah/duckie_msgs.git ~/duckie_ws/src/duckie_msgs
 cd ~/duckie_ws
+source /opt/ros/foxy/setup.bash
 colcon build
 cd -
 echo "source ~/duckie_ws/install/setup.bash" >> ~/.bashrc
