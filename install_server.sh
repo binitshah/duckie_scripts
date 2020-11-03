@@ -188,6 +188,8 @@ echo "setup hotspot"
 sudo apt-get install --yes network-manager
 sudo nmcli dev wifi hotspot ifname wlan0 ssid $DID password "$DID"
 sudo nmcli con mod Hotspot connection.autoconnect yes
+sudo sed -i '15,21d' /etc/NetworkManager/system-connections/Hotspot.nmconnection
+sudo cat /etc/NetworkManager/system-connections/Hotspot.nmconnection
 echo ""
 
 echo "change user password"
