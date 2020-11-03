@@ -185,11 +185,14 @@ sudo cp ./avrdude.conf /etc/avrdude.conf
 echo ""
 
 echo "setup hotspot"
-sudo apt-get install --yes network-manager
+sudo apt-get install --yes network-manager avahi-daemon
 sudo nmcli dev wifi hotspot ifname wlan0 ssid $DID password "$DID"
 sudo nmcli con mod Hotspot connection.autoconnect yes
 sudo sed -i '15,21d' /etc/NetworkManager/system-connections/Hotspot.nmconnection
 sudo cat /etc/NetworkManager/system-connections/Hotspot.nmconnection
+sudo sh -c "echo '\n127.0.1.1 duckiebot' >> /etc/hosts"
+sudo rm /etc/hostname
+sudo sh -c "echo 'duckiebot' >> /etc/hostname"
 echo ""
 
 echo "change user password"
