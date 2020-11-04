@@ -199,9 +199,8 @@ echo "change user password"
 echo -e "ubuntu123\n$DID\n$DID" | passwd
 echo ""
 
-echo "TODO: clone duckie_msgs and colcon build, then add source overlay to .bashrc"
+echo "setup duckie workspace, colcon build, then add source overlay to .bashrc"
 mkdir -p ~/duckie_ws/src
-git clone https://github.com/binitshah/duckie_msgs.git ~/duckie_ws/src/duckie_msgs
 cd ~/duckie_ws
 source /opt/ros/foxy/setup.bash
 colcon build
