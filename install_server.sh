@@ -138,6 +138,7 @@ sudo cp ./10-local_i2c_group.rules /etc/udev/rules.d/
 sudo cp ./11-local_video_group.rules /etc/udev/rules.d/
 sudo cp ./12-local_gpio_group.rules /etc/udev/rules.d/
 sudo cp ./13-local_gpio_group.rules /etc/udev/rules.d/
+groups
 echo ""
 
 echo "compile and install raspberrypi/userland"
